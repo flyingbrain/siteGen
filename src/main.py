@@ -8,6 +8,7 @@ base_path = "/"
 def main():
     args = sys.argv
     if len(args) == 2:
+        global base_path
         base_path = args[1]
 
     copy_static()
