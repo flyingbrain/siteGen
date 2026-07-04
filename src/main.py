@@ -81,7 +81,8 @@ def generate_page(path, template, dest):
     node = markdown_to_html_node(text)
     html = node.to_html().replace('src="/', f'src="{base_path}').replace('href="/', f'href="{base_path}')
 
-    rez = temp.replace("{{ Content }}", html).replace("{{ Title }}", title) 
+    rez = temp.replace("{{ Content }}", html).replace("{{ Title }}", title).replace('href="/', f'href="{base_path}')
+
 
     with open(dest, "w") as f:
         des_f = f.write(rez)
